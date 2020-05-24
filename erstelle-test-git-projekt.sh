@@ -1,6 +1,10 @@
-echo "Erstelle testprojekt Verzeichnis"
-mkdir testprojekt
-cd testprojekt
+#!/bin/bash
+
+projektname=$1
+
+echo "Erstelle $projektname Verzeichnis"
+mkdir "$projektname"
+cd "$projektname"
 echo "Erstelle ein git Repo mit git init"
 git init
 echo "Erstelle eine test-datei"
@@ -18,7 +22,4 @@ do
   git commit -m "$i. commit"
 done
 
-cd testprojekt
-
-echo "Log ausgeben mit git log --online --graph"
-git log --oneline --graph
+ls -la
